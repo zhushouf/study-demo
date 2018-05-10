@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huaweisoft.training.dao.UnionQueryMapper">
+
+	<resultMap type="com.huaweisoft.training.entity.UnionQuery" id="unionQueryMap">
+	    <id column="s_id" property="sId" jdbcType="INTEGER" />
+	    <result column="s_name" property="sName" jdbcType="VARCHAR" />
+	    <result column="s_birth" property="sBirth" jdbcType="DATE" />
+	    <result column="s_sex" property="sSex" jdbcType="VARCHAR" />
+		<collection property="scores" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Score">
+    		<id column="s_id" property="sId" jdbcType="INTEGER" />
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+			<result column="s_score" property="sScore" jdbcType="INTEGER" />
+		</collection>
+		  <collection property="courses" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Course">
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+		    <result column="c_name" property="cName" jdbcType="VARCHAR" />
+		    <result column="t_id" property="tId" jdbcType="INTEGER" />
+		</collection>
+		<collection property="teachers" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Teacher">
+			<id column="t_id" property="tId" jdbcType="INTEGER" />
+    		<result column="t_name" property="tName" jdbcType="VARCHAR" />
+		</collection>  
+	</resultMap>
+	<resultMap type="com.huaweisoft.training.entity.UnionQuery" id="unionQueryMap2">
+	    <id column="s_id" property="sId" jdbcType="INTEGER" />
+	    <result column="s_name" property="sName" jdbcType="VARCHAR" />
+	    <result column="s_birth" property="sBirth" jdbcType="DATE" />
+	    <result column="s_sex" property="sSex" jdbcType="VARCHAR" />
+		<collection property="scores" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Score">
+    		<id column="s_id" property="sId" jdbcType="INTEGER" />
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+			<result column="s_score" property="sScore" jdbcType="INTEGER" />
+		</collection>
+		  <collection property="courses" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Course">
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+		    <result column="c_name" property="cName" jdbcType="VARCHAR" />
+		    <result column="t_id" property="tId" jdbcType="INTEGER" />
+		</collection>
+	</resultMap>
+	<resultMap type="com.huaweisoft.training.entity.UnionQuery" id="unionQueryMap3">
+	    <id column="s_id" property="sId" jdbcType="INTEGER" />
+	    <result column="s_name" property="sName" jdbcType="VARCHAR" />
+	    <result column="s_birth" property="sBirth" jdbcType="DATE" />
+	    <result column="s_sex" property="sSex" jdbcType="VARCHAR" />
+		<collection property="scores" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Score">
+    		<id column="s_id" property="sId" jdbcType="INTEGER" />
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+			<result column="s_score" property="sScore" jdbcType="INTEGER" />
+		</collection>
+	</resultMap>
+	<resultMap type="com.huaweisoft.training.entity.Student" id="unionQueryMap5">
+	    <id column="s_id" property="sId" jdbcType="INTEGER" />
+	    <result column="s_name" property="sName" jdbcType="VARCHAR" />
+	    <result column="s_birth" property="sBirth" jdbcType="DATE" />
+	    <result column="s_sex" property="sSex" jdbcType="VARCHAR" /> 
+	</resultMap>	
+	<resultMap type="com.huaweisoft.training.entity.UnionQuery" id="unionQueryMap6">
+	    <id column="s_id" property="sId" jdbcType="INTEGER" />
+	    <result column="s_name" property="sName" jdbcType="VARCHAR" />
+	    <result column="s_birth" property="sBirth" jdbcType="DATE" />
+	    <result column="s_sex" property="sSex" jdbcType="VARCHAR" />
+		  <collection property="courses" javaType="java.util.List" ofType="com.huaweisoft.training.entity.Course">
+			<id column="c_id" property="cId" jdbcType="INTEGER" />
+		    <result column="c_name" property="cName" jdbcType="VARCHAR" />
+		    <result column="t_id" property="tId" jdbcType="INTEGER" />
+		</collection> 
+	</resultMap>
+	<select id="findByStudnetId" resultMap="unionQueryMap">
+		SELECT * FROM score a
+		LEFT JOIN course b ON a.c_id = b.c_id
+		LEFT JOIN student c ON a.s_id = c.s_id
+		LEFT JOIN teacher d ON d.t_id = b.t_id
+		WHERE a.s_id = #{id}
+	</select>
+	
+	<select id="findByStudnetId2" resultMap="unionQueryMap2">
+		SELECT * FROM score a
+		LEFT JOIN course b ON a.c_id = b.c_id
+		LEFT JOIN student c ON a.s_id = c.s_id
+		WHERE a.s_id = #{id}
+	</select>
+	
+	<select id="findByStudnetId3" resultMap="unionQueryMap3">
+		select * from score a LEFT JOIN student b on a.s_id = b.s_id
+            where a.c_id = #{cid} and a.s_score > #{score}
+	</select>
+	
+	<select id="findstudyByName" resultMap="unionQueryMap2">
+		SELECT * FROM student a
+		LEFT JOIN score b ON a.s_id = b.s_id
+		LEFT JOIN course c ON c.c_id = b.c_id
+		WHERE a.s_name = #{name} and c.c_name = #{cname}
+	</select>
+	<select id="findstudentInfo" resultMap="unionQueryMap5">
+		select * from student where s_id in(        
+            select s_id from score GROUP BY s_id HAVING count(*)=(select count(*) from course))
+	</select>
+	
+	<select id="findByStudnetId4" resultMap="unionQueryMap6">
+		SELECT c.*,b.c_id FROM score a
+		LEFT JOIN course b ON a.c_id = b.c_id
+		LEFT JOIN student c ON a.s_id = c.s_id
+		WHERE a.s_id = 1
+	</select>
+	
+</mapper>

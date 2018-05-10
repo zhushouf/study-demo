@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网易云音乐</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+     <style type="text/css">    
+      body{
+        padding-top: 0px;
+      }    
+    </style>
+  <body>
+    <nav class="navbar" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+              <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              </button>-->
+              <a class="navbar-brand" href="#">网易云音乐</a>
+      </div>
+      <div style="text-align: center;background:#D3D3D3"><!-- style="text-align: center;background:#D3D3D3" -->
+        <ul class="nav navbar-nav" style="display: inline-block;float: none;">
+          <li class="active"><a href="#">首页<span class="sr-only"></span></a></li>
+          <li class=""><a href="#">推荐</a></li>
+          <li class=""><a href="#">排行</a></li>
+          <li class=""><a href="#">歌手</a></li>
+          <li class=""><a href="#" class="dropdown-toggle" data-toggle="dropdown">分类<b class="caret"></b></a>
+                <ul class="dropdown-menu"   style="background:#D3D3D3"><!--style="background:#D3D3D3"-->
+                  <li><a href="#">热播歌单</a></li>
+                  <li><a href="#">经典音乐</a></li>
+                  <li><a href="#">流行音乐</a></li>
+                  <li><a href="#">港台音乐</a></li>
+                  <li><a href="#">国风民谣</a></li>
+                  <li><a href="#">伤感音乐</a></li>
+                  <li><a href="#">欧美音乐</a></li>
+                  <li><a href="#">日韩音乐</a></li>
+              </ul>               
+          </li> 
+          <li class=""><a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+              <ul class="dropdown-menu"   style="background:#D3D3D3"><!--style="background:#D3D3D3"-->
+                  <li><a href="#">热播歌单top500</a></li>
+                  <li><a href="#">流行音乐top100</a></li>
+                  <li><a href="#">港台音乐top100</a></li>
+                  <li><a href="#">伤感音乐top100</a></li>
+                  <li><a href="#">欧美音乐top200</a></li>
+                  <li><a href="#">新曲首发</a></li>
+              </ul>  
+          </li> 
+        </ul>
+        <div style="float: right;">  
+            <form class="navbar-form navbar-left" role="search">  
+              <div class="form-group">  
+                  <input type="text" class="form-control" placeholder="Search Music">  
+              </div>  
+              <button type="submit" class="btn btn-default">搜一下</button>  
+            </form>      
+        </div>  
+        <div class="navbar-header" style="float: right;margin-top:17px;font-size: 15px; margin-right: 20px;"><a href="C:\Users\zhusf\Desktop\zhusf\bootstrap\login.html">登陆</a>&nbsp;&nbsp;<a href="C:\Users\zhusf\Desktop\zhusf\bootstrap\register.html">注册</a></div>
+     </div>
+     </div>
+     </nav>
+
+     <div class="container"> 
+      <div class="carousel" id="slidershow">
+          <ol class="carousel-indicators">
+            <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+            <li data-target="#slidershow" data-slide-to="1"></li>
+            <li data-target="#slidershow" data-slide-to="2"></li>
+            <!--<li data-target="#slidershow" data-slide-to="3"></li>      -->
+         </ol>
+         <div class="carousel-inner" >
+             <div class="item active">
+                <img src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\11.jpg" alt="" style="width:100%;height: 450px;" />  
+                <div class="carousel-caption" style="color: black">
+                  <h4>网易云</h4>
+                  <p>随时随地听音乐</p> 
+                </div>   
+             </div>     
+            <div class="item">
+                <img src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\2.jpg" alt="" style="width:100%;height: 450px;" />  
+                <div class="carousel-caption" style="color: black">
+                  <h4>邓紫棋</h4>
+                  <p>中国流行音乐歌手</p> 
+                </div>   
+             </div>   
+              <div class="item">
+                <img src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\3.jpg" alt="" style="width:100%;height: 450px;" />  
+                <div class="carousel-caption" style="color: white">
+                  <h4>张学友</h4>
+                  <p>世界巡回演唱会</p> 
+                </div>   
+             </div>               
+         </div>
+         <a href="#slidershow" data-slide="prev" class="left carousel-control" role="button"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+         <a href="#slidershow" data-slide="next" class="right carousel-control" role="button"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      </div>
+
+      <table class="table">
+        <caption>今日女歌手排行榜</caption>
+        <thead>
+            <tr>
+              <th>排行</th>
+              <th>简介</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>1</td>
+              <td><h4 class="media-heading">戚薇</h4></td>
+            </tr>
+            <tr>
+              <!--<div class="media">-->
+                <td>
+                   <a class="media-left" href="#">
+                    <img class="media-object" src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\7.jpg" alt="媒体对象" style="height: 100px;">
+                   </a>
+                </td>
+                <td>
+                  <div class="media-body">
+                    <a  href="#">
+                    戚薇，1984年10月26日出生于四川省成都市武侯区，中国内地女演员、歌手，毕业于浙江传媒学院录音艺术专业。2006年因参加选秀节目《我型我秀》而正式出道，同年与袁成杰组成“男才女貌”组合，并凭借歌曲《外滩十八号》在歌坛获得关注。2010年因参演古装剧《美人心计》而被观众所熟知。2011年主演都市情感剧《夏家三千金》；同年签约海蝶音乐，并发行首张个人EP《如果爱忘了》。2012年在都市剧《世界上..
+                    </a>
+                  </div>
+                </td>
+              <!--</div>-->
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><h4 class="media-heading">彭丽媛</h4></td>
+            </tr>
+            <tr>
+              <td>
+                <a class="media-left" href="#">
+                  <img class="media-object" src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\8.jpg" alt="媒体对象" style="height: 100px;">
+                </a>  
+              </td>
+              <td>
+                  <div class="media-body">
+                    <!--<h4 class="media-heading">彭丽媛</h4>-->
+                    <a  href="#">
+                    彭丽媛，1962年11月20日出生于山东省菏泽市郓城县，中国著名女高音歌唱家，中国第一位民族声乐硕士，国家一级演员，享受国务院颁发的“政府津贴”。1985年7月加入中国共产党，是中国人民解放军文职干部，正军级待遇。彭丽媛是连续当选第八届、九届、十届中国人民政治协商会议的全国政协委员。2005年当选中华全国青联联合会副主席。2009年担任中国人民解放军总政治部歌舞团团长。2012年升任解放军艺术学.. 
+                    </a>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><h4 class="media-heading">王菲</h4></td>
+            </tr>
+            <tr>
+              <td>
+                <a class="media-left" href="#">
+                  <img class="media-object" src="C:\Users\zhusf\Desktop\zhusf\bootstrap\img\9.jpg" alt="媒体对象" style="height: 100px;">
+                </a>
+              </td>
+              <td>
+                  <div class="media-body">
+                    <!--<h4 class="media-heading">王菲</h4>-->
+                    <a  href="#">
+                    王菲（Faye Wong），1969年8月8日出生于北京，中国流行乐女歌手、影视演员、中国国家一级演员。
+                    1989年凭借歌曲《仍是旧句子》在香港歌坛出道，同年发行首张个人专辑《王靖雯》。1992年因演唱歌曲《容易受伤的女人》而被听众所熟知。1993年在专辑《十万个为什么？》 中尝试另类音乐的风格。1994年发行专辑《天空》，并获得十大劲歌金曲最受欢迎女歌星奖；同年在香港红磡体育馆举办18场“最精彩演唱会”，打破中国香港歌手初次开演唱会的场次纪录。1996年成为首位登上美国《时代周刊》封面的华人歌手。
+                    </a>
+                  </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="main_nav_bottom center-block" style="width: 450px;">
+          <ul class="nav navbar-nav"  style="height: 15px;line-height: 15px;">
+                  <li class="active "><a href="#">联系我们</a></li>
+                  <li><a href="#">网站信息</a></li>
+                  <li><a href="#">发现精彩</a></li>
+                  <li><a href="#">人才招聘</a></li>
+          </ul>      
+      </div> 
+      <div class="center-block" style="margin-top:33px; "><p class="center-block">Copyright © 2013-2018华微软件 </p></div>
+   </div>
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

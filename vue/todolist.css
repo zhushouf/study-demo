@@ -1,0 +1,68 @@
+*{padding: 0;margin: 0; box-sizing: border-box;}
+        #todo{
+            margin: 50px auto;
+            width: 500px;
+            padding: 10px;
+        }
+        #todo>li{
+            list-style-type: none;
+            position: relative;
+            line-height: 30px;
+            cursor: pointer;
+            padding-left: 10px;
+            border: 1px solid #fff;
+        }
+		h1{
+			background:#00CC33;
+		}
+		.button2{
+			margin-right:21px;
+			margin-top:22px;
+			height:30px;
+			width:55px;
+			float:right;
+		}
+        #todo>li:hover {
+            border: 1px solid #eee;
+        }
+        #todo li .chek{
+            text-decoration: line-through;
+            color: #eee;
+        }
+        #todo li.editing div{
+            display: none;
+        }
+        #todo li .edit-txt{
+            padding-left: 10px;
+            margin-left: 10px;
+            width: 80%;
+            display: none;
+            height: 30px;
+        }
+        #todo li.editing .edit-txt{
+            display: block;
+        }
+
+        #todo .select-box.check{
+            background: blue;
+        }
+        #todo .close{
+            position: absolute;
+            right: 10px;
+        }
+        #todo .close:hover{
+            color: red;
+        }
+        #todo>h1{
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        #todo .text{
+            width: 80%;
+            height: 30px;
+            margin: 20px 0;
+            padding-left: 10px;
+        }
+        #todo .warn input{
+            margin: 10px 0;
+        }

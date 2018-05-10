@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 100px;
+}
+.header{
+    height: 100px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    background: dodgerblue;
+}
+.center{
+    height: 860px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+.menu{
+    height: 860px;
+    width: 15%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+    background: limegreen;
+    float: left;
+    text-align: center;
+}
+.main{
+    height: 860px;
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+    background: white;
+    text-align: left;
+}
+.footer{
+    height: 100px;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    background: dodgerblue;
+}

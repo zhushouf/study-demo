@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist清单</title>
+    <link rel="stylesheet" type="text/css" href="todolist.css" />
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="todo">
+        <h1>任务计划列表</h1>
+        <input class="text" type="text" placeholder="请输入你最近想做的事" @keyup.enter="addList" v-model="addText" />
+		<button  class="button2"  v-on:click="addList" value="添加" >添加</button>
+        <div class="warn">
+            <p>共有{{todoList.length}}个事件，{{noend===0? "全部完成了":'已完成了'+(todoList.length-noend)+'个事件，还有'+noend+'个事件未完成'}}</p>
+        </div>
+        <li v-for="(list, index) in newTodoList" :class="{'editing':curIndex===index}">
+            <div>
+                <input type="checkbox" @click="list.status=!list.status" :checked="list.status"/>
+                <span @dblclick="curIndex=index" :class="{'chek':list.status}">{{ list.name }}</span>
+                <span @click="delect(index)" class="close">删除</span>
+            </div>
+        </li>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="todolist.js"></script>
+</html>
